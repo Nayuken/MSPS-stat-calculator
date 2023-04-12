@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Castella Calculator</title>
+</head>
+<body>
+
+<h1>Enter your stats</h1>
+<form action="{{url_for('index')}}" method="post">
+    <label for="str">Enter STR value</label><br>
+    <input type="number" id="str" name="str" min="0"><br>
+
+    <label for="dex">Enter DEX value</label><br>
+    <input type="number" id="dex" name="dex" min="0"><br>
+
+    <label for="int">Enter INT value</label><br>
+    <input type="number" id="int" name="int" min="0"><br>
+
+    <label for="luk">Enter LUK value</label><br>
+    <input type="number" id="luk" name="luk" min="0"><br>
+
+    <label for="wp_attk">Enter total weapon attack value</label><br>
+    <input type="number" id="wp_attk" name="wp_attk" min="0"><br>
+
+    <label for="weapon_type">Choose your weapon type</label><br>
+    <select name="weapon_type" id="weapon_type">
+        <option value="1h sword">1h sword</option>
+        <option value="1h axe">1h axe</option>
+        <option value="1h bw">1h bw</option>
+        <option value="2h sword">2h sword</option>
+        <option value="2h axe">2h axe</option>
+        <option value="2h bw">2h bw</option>
+        <option value="spear">spear</option>
+        <option value="polearm">polearm</option>
+        <option value="dagger">dagger</option>
+        <option value="claw">claw</option>
+        <option value="bow">bow</option>
+        <option value="xbow">xbow</option>
+        <option value="knuckle">knuckle</option>
+        <option value="gun">gun</option>
+    </select><br><br>
+
+     <input type="submit" value="Submit">
+
+
+</form>
+
+</body>
+</html>
