@@ -5,21 +5,21 @@
 <body>
 
 <h1>Enter your stats</h1>
-<form action="{{url_for('index')}}" method="post">
+<form id="calcForm" action="{{url_for('index')}}" method="post" >
     <label for="str">Enter STR value</label><br>
-    <input type="number" id="str" name="str" min="0"><br>
+    <input type="number" id="str" name="str" min="0" value="0"><br>
 
     <label for="dex">Enter DEX value</label><br>
-    <input type="number" id="dex" name="dex" min="0"><br>
+    <input type="number" id="dex" name="dex" min="0" value="0"><br>
 
     <label for="int">Enter INT value</label><br>
-    <input type="number" id="int" name="int" min="0"><br>
+    <input type="number" id="int" name="int" min="0" value="0"><br>
 
     <label for="luk">Enter LUK value</label><br>
-    <input type="number" id="luk" name="luk" min="0"><br>
+    <input type="number" id="luk" name="luk" min="0" value="0"><br>
 
     <label for="wp_attk">Enter total weapon attack value</label><br>
-    <input type="number" id="wp_attk" name="wp_attk" min="0"><br>
+    <input type="number" id="wp_attk" name="wp_attk" min="0" value="0"><br>
 
     <label for="weapon_type">Choose your weapon type</label><br>
     <select name="weapon_type" id="weapon_type">
@@ -40,9 +40,25 @@
     </select><br><br>
 
      <input type="submit" value="Submit">
-
-
 </form>
-
+<h3 id="result">With the values provided your range is 0~0</h3>
+{% block javascript %}
+    <script>
+        calcForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (str.value > 0 && dex.value >0 && int.value > 0 && luk.value > 0 && wp_attk.value > 0) {
+                calcForm.submit()
+            } else {
+                console.log("invalid request");
+            }
+        });
+        calculation = JSON.parse({{ calculation | tojson }})
+        if (calculation.Range === undefined){
+            //pass
+        } else {
+            document.getElementById("result").innerHTML = calculation.Range;
+        }
+    </script>
+{% endblock %}
 </body>
 </html>
