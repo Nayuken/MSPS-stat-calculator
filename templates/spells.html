@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Castella Spell Calculator</title>
+</head>
+<body>
+
+<h1>Enter your int value and choose spell</h1>
+<form id="spellForm" action="{{url_for('spells')}}" method="post" >
+
+    <label for="int">Enter INT value</label><br>
+    <input type="number" id="int" name="int" min="0" value="0"><br><br>
+
+    <label for="mg_attk">Enter total magic value</label><br>
+    <input type="number" id="mg_attk" name="wp_attk" min="0" value="0"><br>
+
+</form>
+
+</body>
+</html>
