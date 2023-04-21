@@ -1,4 +1,7 @@
-""" Reference: https://ayumilovemaple.wordpress.com/2009/09/06/maplestory-formula-compilation/"""
+""" References:
+https://ayumilovemaple.wordpress.com/2009/09/06/maplestory-formula-compilation/
+https://forum.maplelegends.com/index.php?threads/nises-formula-compilation.36234/
+"""
 
 class Weaponformula:
     def __init__(self,str,dex,int,luk,wp_attk,wp_type):
@@ -59,8 +62,10 @@ class Weaponformula:
         # Attack / 100
         # MIN = (Primary Stat * 0.9 * Skill Mastery + Secondary Stat) * Weapon
         # Attack / 100
-
         mastery = 0.6
+        if self.wp_type == "bow" or self.wp_type == "xbow":
+            mastery = 0.9
+            self.wp_attk += 10
         Max_range = (primary_stat + secondary_stat) * self.wp_attk / 100
         Min_range = (primary_stat * 0.9 * mastery + secondary_stat) * self.wp_attk / 100
         result = "With the values provided your range is " +str(int(Min_range))+"~" +str(int(Max_range))

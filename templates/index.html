@@ -6,6 +6,14 @@
 
 <h1>Enter your stats</h1>
 <form id="calcForm" action="{{url_for('index')}}" method="post" >
+
+    <!-- WIP
+    <p>Are you a ranged class?</p>
+    <input type="radio" id="yes" name="throwable" value ="yes">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="no" name="throwable" value ="no">
+    <label for="no">no</label><br><br>
+    -->
     <label for="str">Enter STR value</label><br>
     <input type="number" id="str" name="str" min="0" value="0"><br>
 
@@ -18,7 +26,7 @@
     <label for="luk">Enter LUK value</label><br>
     <input type="number" id="luk" name="luk" min="0" value="0"><br>
 
-    <label for="wp_attk">Enter total weapon attack value</label><br>
+    <label for="wp_attk">Enter total weapon attack value (Including the attack you get from throwables | (BM/MM expert passive is precalculated)</label><br>
     <input type="number" id="wp_attk" name="wp_attk" min="0" value="0"><br>
 
     <label for="weapon_type">Choose your weapon type</label><br>
@@ -58,6 +66,9 @@
         } else {
             document.getElementById("result").innerHTML = calculation.Range;
         }
+    </script>
+    <script>
+       // TODO write Functionality for throwable calculation
     </script>
 {% endblock %}
 </body>
