@@ -4,7 +4,7 @@ https://forum.maplelegends.com/index.php?threads/nises-formula-compilation.36234
 """
 
 class Weaponformula:
-    def __init__(self,str,dex,int,luk,wp_attk,wp_type,throwable):
+    def __init__(self,str,dex,int,luk,wp_attk,wp_type,throwable, bof):
         self.str = str
         self.dex = dex
         self.int = int
@@ -12,6 +12,7 @@ class Weaponformula:
         self.wp_attk = wp_attk
         self.wp_type = wp_type
         self.throwable = throwable
+        self.bof = bof
     def throwable_stats(self):
         throwable_item = 0
         """Stars"""
@@ -75,23 +76,16 @@ class Weaponformula:
         gun = [self.dex * 3.6, self.str]
 
         weapons_dict = {"1h sword":onehanded_sword, "1h axe": onehanded_alt, "1h bw": onehanded_alt, "2h sword":twohanded_sword, "2h axe": twohanded_alt,"2h bw": twohanded_alt,"spear":spear,"polearm":polearm,"dagger":thief,"claw":thief,"bow":bow,"xbox":xbow,"knuckle":knuckle,"gun":gun}
-        input_list = ["1h sword", "1h axe", "1h bw", "2h sword", "2h axe", "2h bw", "spear", "polearm", "dagger", "claw","bow","xbow","knuckle","gun"]
-        input_answered = True
-        while input_answered:
-            weapon_input = self.wp_type
-            if weapon_input not in input_list:
-                print("please only enter only enter a weapon type from the list provided\n")
-            else:
-                input_answered = False
+
         for key,value in weapons_dict.items():
-            if key == weapon_input:
+            if key == self.wp_type:
                 primary = value[0]
                 secondary = value[1]
         return primary, secondary
 
     def weapon_calc(self):
         primary_stat, secondary_stat = Weaponformula.weapon_stats(self)
-        attack_stat = self.wp_attk + Weaponformula.throwable_stats(self)
+        attack_stat = self.wp_attk + Weaponformula.throwable_stats(self) +self.bof
 
         """General Formula"""
         # MAX = (Primary Stat + Secondary Stat) * Weapon

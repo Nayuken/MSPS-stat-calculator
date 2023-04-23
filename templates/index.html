@@ -7,13 +7,6 @@
 <h1>Enter your stats</h1>
 <form id="calcForm" action="{{url_for('index')}}" method="post" >
 
-    <!-- WIP
-    <p>Are you a ranged class?</p>
-    <input type="radio" id="yes" name="throwable" value ="yes">
-    <label for="yes">Yes</label><br>
-    <input type="radio" id="no" name="throwable" value ="no">
-    <label for="no">no</label><br><br>
-    -->
     <label for="weapon_type">Choose your weapon type</label><br>
     <select name="weapon_type" id="weapon_type">
         <option value="1h sword">1h sword</option>
@@ -32,7 +25,7 @@
         <option value="gun">gun</option>
     </select><br><br>
 
-        <label for="throwable">Choose your throwable</label><br>
+    <label for="throwable">Choose your throwable</label><br>
     <select name="throwable" id="throwable">
         <option value="Melee Class">Melee Class</option>
         <option value="Crystal Ilbis">Crystal Ilbis</option>
@@ -55,20 +48,23 @@
         <option value="Titanium Arrow">Titanium Arrow</option>
     </select><br><br>
 
+    <label for="bof">Enter your Blessing of fairy level</label><br>
+    <input type="number" id="bof" name="bof" min="0" max="20" ><br><br>
+
     <label for="str">Enter STR value</label><br>
-    <input type="number" id="str" name="str" min="0" value="0"><br>
+    <input type="number" id="str" name="str" min="0" ><br>
 
     <label for="dex">Enter DEX value</label><br>
-    <input type="number" id="dex" name="dex" min="0" value="0"><br>
+    <input type="number" id="dex" name="dex" min="0" ><br>
 
     <label for="int">Enter INT value</label><br>
-    <input type="number" id="int" name="int" min="0" value="0"><br>
+    <input type="number" id="int" name="int" min="0" ><br>
 
     <label for="luk">Enter LUK value</label><br>
-    <input type="number" id="luk" name="luk" min="0" value="0"><br>
+    <input type="number" id="luk" name="luk" min="0" ><br>
 
     <label for="wp_attk">Enter the total weapon attack value from all your equipment</label><br>
-    <input type="number" id="wp_attk" name="wp_attk" min="0" value="0"><br><br>
+    <input type="number" id="wp_attk" name="wp_attk" min="0" ><br><br>
 
 
 
@@ -93,7 +89,7 @@
         }
     </script>
     <script>
-       // TODO write Functionality for throwable calculation
+       // TODO: saving fields via session
     </script>
 {% endblock %}
 </body>
