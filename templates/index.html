@@ -14,21 +14,6 @@
     <input type="radio" id="no" name="throwable" value ="no">
     <label for="no">no</label><br><br>
     -->
-    <label for="str">Enter STR value</label><br>
-    <input type="number" id="str" name="str" min="0" value="0"><br>
-
-    <label for="dex">Enter DEX value</label><br>
-    <input type="number" id="dex" name="dex" min="0" value="0"><br>
-
-    <label for="int">Enter INT value</label><br>
-    <input type="number" id="int" name="int" min="0" value="0"><br>
-
-    <label for="luk">Enter LUK value</label><br>
-    <input type="number" id="luk" name="luk" min="0" value="0"><br>
-
-    <label for="wp_attk">Enter total weapon attack value (Including the attack you get from throwables | (BM/MM expert passive is precalculated)</label><br>
-    <input type="number" id="wp_attk" name="wp_attk" min="0" value="0"><br>
-
     <label for="weapon_type">Choose your weapon type</label><br>
     <select name="weapon_type" id="weapon_type">
         <option value="1h sword">1h sword</option>
@@ -46,6 +31,46 @@
         <option value="knuckle">knuckle</option>
         <option value="gun">gun</option>
     </select><br><br>
+
+        <label for="throwable">Choose your throwable</label><br>
+    <select name="throwable" id="throwable">
+        <option value="Melee Class">Melee Class</option>
+        <option value="Crystal Ilbis">Crystal Ilbis</option>
+        <option value="Cracker Shooter">Cracker Shooter</option>
+        <option value="Magic Throwing Knife">Magic Throwing Knife</option>
+        <option value="Infinite Throwing Knife">Infinite Throwing Knife</option>
+        <option value="Flame Throwing Star">Flame Throwing Star</option>
+        <option value="White Gold Throwing Star">White Gold Throwing Star</option>
+        <option value="Shiny Bullet">Shiny Bullet</option>
+        <option value="Eternal Bullet">Eternal Bullet</option>
+        <option value="Armor Piercing Bullet">Armor Piercing Bullet</option>
+        <option value="Giant Bullet">Giant Bullet</option>
+        <option value="Purple laser Bullet">Purple laser bullet</option>
+        <option value="Red laser Bullet">Red laser Bullet</option>
+        <option value="Red Arrow">Red Arrow</option>
+        <option value="Diamond Arrow">Diamond Arrow</option>
+        <option value="Quality Arrow">Quality Arrow</option>
+        <option value="Strong Arrow">Strong Arrow</option>
+        <option value="Sharp Arrow">Sharp Arrow</option>
+        <option value="Titanium Arrow">Titanium Arrow</option>
+    </select><br><br>
+
+    <label for="str">Enter STR value</label><br>
+    <input type="number" id="str" name="str" min="0" value="0"><br>
+
+    <label for="dex">Enter DEX value</label><br>
+    <input type="number" id="dex" name="dex" min="0" value="0"><br>
+
+    <label for="int">Enter INT value</label><br>
+    <input type="number" id="int" name="int" min="0" value="0"><br>
+
+    <label for="luk">Enter LUK value</label><br>
+    <input type="number" id="luk" name="luk" min="0" value="0"><br>
+
+    <label for="wp_attk">Enter the total weapon attack value from all your equipment</label><br>
+    <input type="number" id="wp_attk" name="wp_attk" min="0" value="0"><br><br>
+
+
 
      <input type="submit" value="Submit">
 </form>

@@ -16,10 +16,11 @@ def index():
         web_luk = int(request.form.get("luk"))
         web_wpattk = int(request.form.get("wp_attk"))
         web_wptype = str(request.form.get("weapon_type"))
+        web_throwable = str(request.form.get("throwable"))
 
         castella = weaponformulas.Weaponformula(web_str, web_dex, web_int,
                                                 web_luk, web_wpattk,
-                                                web_wptype)
+                                                web_wptype,web_throwable)
         range = {"Range": castella.weapon_calc()}
     calculation = json.dumps(range)
     return render_template('index.html', calculation=calculation)
